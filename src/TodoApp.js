@@ -11,7 +11,7 @@ import TodoForm from './TodoForm';
 function TodoApp() {
 
     const initialTodos = [
-        { id: 1, task: "Clean", completed: false },
+        { id: 1, task: "Clean", completed: true },
         { id: 2, task: "Wash", completed: false },
         { id: 3, task: "Dry", completed: false },
     ]
@@ -34,8 +34,12 @@ function TodoApp() {
                     <Typography color="inherit">TODOS WITH HOOKS</Typography>
                 </Toolbar>
             </AppBar>
-            <TodoForm addTodo={addTodo} />
-            <TodoList todos={todos} />
+            <Grid container justify="center" style={{ marginTop: '1rem' }}>
+                <Grid item xs={11} md={8} lg={4}>
+                    <TodoForm addTodo={addTodo} />
+                    <TodoList todos={todos} />
+                </Grid>
+            </Grid>
         </Paper >
     )
 }
