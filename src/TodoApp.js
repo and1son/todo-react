@@ -11,7 +11,7 @@ import TodoForm from './TodoForm';
 
 function TodoApp() {
 
-    const initialTodos = JSON.parse(window.localStorage.getItem("todos")) || "[]";
+    const initialTodos = [{ id: 1, task: 'nesto', completed: false }]
 
     const { todos, addTodo, removeTodo, toggleTodo, editTodo } = useTodoState(initialTodos)
     // const initialTodos = [
@@ -19,14 +19,6 @@ function TodoApp() {
     //     { id: 2, task: "Wash", completed: false },
     //     { id: 3, task: "Dry", completed: false },
     // ]
-
-
-    useEffect(() => {
-        //alert("in use effect")
-        window.localStorage.setItem("todos", JSON.stringify(todos));
-    }, [todos])
-
-
 
     return (
         <Paper style={{
